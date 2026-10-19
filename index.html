@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi Negocio en Números</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f6;--cd:#fff;--tx:#10243a;--mu:#586b7d;--br:#d3dde5;--ac:#0e6b8c;--hi:#f2a900;--ok:#16794a;--wa:#a86500;--ko:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a26;--cd:#162636;--tx:#e8f0f6;--mu:#9fb2c3;--br:#2a3f52;--ac:#5cc3e6;--hi:#f2b93b;--ok:#4cc38a;--wa:#f2b93b;--ko:#ff8a80;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1a26;--cd:#162636;--tx:#e8f0f6;--mu:#9fb2c3;--br:#2a3f52;--ac:#5cc3e6;--hi:#f2b93b;--ok:#4cc38a;--wa:#f2b93b;--ko:#ff8a80;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 "Atkinson Hyperlegible",system-ui,sans-serif;padding-bottom:84px;font-variant-numeric:tabular-nums}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--cd);z-index:10}
+header{padding:14px 16px 6px;max-width:640px;margin:auto}
+h1{font-size:22px;margin:0}header p{margin:2px 0 0;color:var(--mu);font-size:14px}
+h2{font-size:17px;margin:0 0 10px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:6px;overflow-x:auto;padding:8px 12px;background:var(--bg)}
+nav button{flex:none;border:1px solid var(--br);background:var(--cd);color:var(--tx);border-radius:20px;padding:8px 14px;font:inherit;font-size:14px}
+nav button.on{background:var(--ac);border-color:var(--ac);color:var(--cd);font-weight:700}
+main{max-width:640px;margin:auto;padding:4px 12px}
+.c{background:var(--cd);border:1px solid var(--br);border-radius:12px;padding:14px;margin:0 0 12px}
+.f{display:block;margin:0 0 10px}.f span{display:block;font-size:14px;color:var(--mu);margin-bottom:3px}
+input,select{width:100%;font:inherit;font-size:16px;color:var(--tx);background:var(--bg);border:1px solid var(--br);border-radius:8px;padding:10px;min-height:44px}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.gr{display:grid;grid-template-columns:1fr 112px;gap:4px 8px;margin:0 0 10px}.gr span{grid-column:1/-1;font-size:14px;color:var(--mu)}
+.ins{display:grid;grid-template-columns:1fr 64px 84px 40px;gap:6px;margin:0 0 6px}
+.ins2{display:grid;grid-template-columns:1fr 96px 100px 40px;gap:6px;margin:0 0 6px}
+.ins button,.ins2 button,.h button{border:1px solid var(--br);background:var(--bg);color:var(--ko);border-radius:8px;min-height:44px;font-size:16px}
+.h{display:grid;grid-template-columns:1fr 44px;gap:8px;margin-bottom:10px}.nm{font-weight:700}
+.s{display:block;font-size:14px;margin:4px 0 6px}
+.b1,.b2{display:block;width:100%;min-height:46px;border-radius:10px;font:inherit;font-weight:700;margin:0 0 12px}
+.b1{background:var(--ac);color:var(--cd);border:0}.b2{background:transparent;color:var(--ac);border:1.5px solid var(--ac);margin:6px 0 10px}
+.k{background:var(--bg);border-radius:8px;padding:10px;font-size:15px;margin-top:8px}.k:empty{display:none}
+.mu{color:var(--mu);font-size:14px}.al{color:var(--wa);font-weight:700;margin:8px 0 0}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--br);font-size:15px}.kv:last-of-type{border:0}.kv b{white-space:nowrap}.kv.b{font-weight:700}
+.ok{color:var(--ok)}.ko{color:var(--ko)}.wa{color:var(--wa)}
+.vr{border-left:6px solid var(--br)}.vr.ok{border-left-color:var(--ok)}.vr.wa{border-left-color:var(--wa)}.vr.ko{border-left-color:var(--ko)}.vr h2{font-size:22px}
+footer{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--cd);border-top:1px solid var(--br);font-size:14px;z-index:6}
+.pill{font-weight:700;padding:6px 12px;border-radius:20px;border:2px solid currentColor}
+nav button:disabled{opacity:.4}.cr{text-align:center;margin:16px 0 8px}
+</style></head><body>
+<header><h1>Mi Negocio en Números</h1><p>Simulador de viabilidad para Aprendices</p></header>
+<nav id="nv"></nav><main id="v"></main><footer id="bar"></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const F=new Intl.NumberFormat('es-CO',{maximumFractionDigits:0}),
+m=v=>(v<0?'-':'')+'$ '+F.format(Math.abs(Math.round(v||0))),
+nf=(v,d=1)=>(isFinite(v)?v:0).toFixed(d).replace('.',','),
+pc1=v=>nf(v)+'%',$=id=>document.getElementById(id),
+esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'),
+q=(id,h)=>{const e=$(id);if(e)e.innerHTML=h};
+const FR={D:['Diario',30],S:['Semanal',4],Q:['Quincenal',2],M:['Mensual',1]};
+const GN=[['sue','Sueldos y prestaciones'],['arr','Arriendo del local'],['ser','Servicios del negocio (agua, luz, gas)'],['tra','Transporte del negocio'],['cuo','Cuotas de créditos actuales del negocio'],['imp','Impuestos'],['otr','Otros gastos del negocio']],
+GF=[['ali','Alimentación'],['arr','Arriendo'],['tra','Transporte'],['edu','Educación'],['sal','Salud'],['ser','Servicios públicos'],['cuo','Cuotas de crédito familiares'],['otr','Otros']],
+OI=[['pen','Pensiones y salarios'],['arr','Arriendos recibidos'],['otr','Otros ingresos']],
+DIAS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'],
+NV=['Negocio','Ventas','Costeo','Gastos','Balance','Resultado'];
+const P=(n,p,u,l,d,m,i)=>({n,p,u,l,d,m,i});
+const blank=()=>({n:'',a:'',cr:{monto:0,plazo:12,tasa:2},caja:0,cxc:0,inv:0,ocp:0,ter:0,maq:0,mue:0,veh:0,olp:0,pv:0,cp:0,pb:0,opb:0,olpb:0,vd:[0,0,0,0,0,0,0],pc:0,sem:4.345,pr:[],co:[],gn:{},gf:{},oi:{}});
+const E1=()=>({...blank(),n:'Venta de mercancías varias',caja:160000,cxc:700000,inv:2220000,mue:4500000,vd:[1e5,1e5,1e5,11e4,15e4,15e4,15e4],pc:15,
+pr:[P('Jeans',4e4,15,1,2e4,0,[]),P('Camisas',4e4,24,1,25e3,0,[]),P('Suéter',25e3,24,1,15e3,0,[]),P('Lencería',12e3,48,1,5e3,0,[]),P('Productos por catálogo',933e3,1,1,7e5,0,[])],
+co:[['C.C. Shopping',3e5,'S'],['Otro',16e4,'Q'],['Avon y otros',35e4,'Q']],
+gn:{tra:{v:3e4,f:'S'}},gf:{ali:{v:17e3,f:'D'},tra:{v:2e4,f:'S'},edu:{v:2e3,f:'D'},sal:{v:4e4},ser:{v:9e4}}});
+const E2=()=>({...blank(),n:'Comidas rápidas y fritos',caja:275000,cxc:850000,inv:915000,mue:8e6,opb:55e4,vd:[0,0,0,156e3,35e4,4e5,36e4],
+pr:[P('Mega salchipapa',12e3,120,1,0,0,[['Papa (lb)',2,700],['Salchicha suiza',.5,2400],['Chorizo',2,350],['Butifarra',2,350],['Salchicha manguera',1,1000],['Carne y pollo',1,1400],['Insumos varios',1,1300],['Desechables',1,200]]),
+P('Mini suizo',4500,250,1,0,0,[['Salchicha suiza',.5,2400],['Pan',1,310],['Insumos varios',1,1000]]),
+P('Salvaje',7e3,220,1,0,0,[['Chorizo',1,350],['Butifarra',1,350],['Salchicha tradicional',1,400],['Carne',1,600],['Insumos varios',1,1400],['Pan',1,310]]),
+P('Empanada de carne',600,700,25,0,0,[['Maíz (lb)',4,1000],['Carne (lb)',.5,5600],['Aceite (lt)',.5,3400],['Papa (lb)',1,700]]),
+P('Papa rellena',700,700,25,0,0,[['Papa (lb)',5,700],['Carne',1,1800],['Aceite (lt)',.5,3400],['Harina de trigo (lb)',1,1000],['Verduras y condimentos',1,1800]]),
+P('Arepa de huevo',1e3,400,25,0,0,[['Maíz (lb)',4,1000],['Huevo (und)',25,300],['Aceite (lt)',.5,3400]])],
+co:[['Jhon Jairo Feria Arroyo',32e4,'S'],['Mercado público Quilla',28e4,'S'],['Otros',16e4,'S']],
+gn:{sue:{v:1e5,f:'S'},ser:{v:15e4},tra:{v:3e4,f:'S'},cuo:{v:232e3}},
+gf:{ali:{v:12e3,f:'D'},arr:{v:25e4},tra:{v:2e3,f:'D'},edu:{v:2e3,f:'D'},sal:{v:35e3},ser:{v:7e4},cuo:{v:65e3}},oi:{pen:{v:15e5}}});
+const E3=()=>({...blank(),n:'Confecciones',cr:{monto:3e6,plazo:24,tasa:4.15},caja:25e4,cxc:85e4,inv:1033600,maq:395e4,mue:8e6,vd:[85e3,85e3,85e3,9e4,11e4,12e4,1e5],
+pr:[P('Jeans',25e3,36,36,0,0,[['Cipor (und.)',50,250],['Tela (m)',50,5500],['Conos de hilo',2,7000],['Sobres (und.)',10,1350]]),
+P('Bermudas',2e4,36,36,0,0,[['Tela (m)',70,5500],['Cipor (und.)',50,250],['Conos de hilo',4,7000]]),
+P('Bragas',2e4,36,36,0,0,[['Tela (m)',75,5500],['Cipor (und.)',45,250],['Conos de hilo',4,7000]]),
+P('Blusas',15e3,36,1,0,600,[['Tela (por blusa)',1,4000],['Hilos, hilasa, algodón',1,1200]])],
+co:[['Almacén El Barato',15e4,'Q'],['Almacén El Encanto',17e4,'S'],['Juan Oquendo',11e4,'S']],
+gn:{ser:{v:75e3},tra:{v:75e3}},gf:{ali:{v:42e4},tra:{v:6e4},edu:{v:4e4},sal:{v:25e3},ser:{v:75e3}}});
+const E4=()=>({...blank(),n:'Venta de cerveza',cr:{monto:98e5,plazo:18,tasa:3.6},caja:85e4,cxc:2e5,inv:1471800,ter:36e6,maq:885e4,mue:45e5,pb:801e3,vd:[0,0,0,47e4,5e5,5e5,5e5],
+pr:[P('Cerveza Águila Light (caja)',6e4,80,1,39200,0,[]),P('Cerveza Águila (caja)',48e3,28,1,33800,0,[]),P('Club Colombia (caja)',54e3,20,1,40400,0,[]),P('Litrón Águila Light (caja)',432e2,28,1,35600,0,[])],
+co:[['Bavaria',1471800,'S']],gn:{ser:{v:1e5},tra:{v:6e4}},gf:{ali:{v:4e5},tra:{v:8e4},sal:{v:75e3},ser:{v:85e3},cuo:{v:11e4}}});
+let S,tab=0;
+try{S=JSON.parse(localStorage.getItem('simpn2'))}catch(e){}
+S=S||blank();
+const sv=()=>{try{localStorage.setItem('simpn2',JSON.stringify(S))}catch(e){}};
+const ok=()=>!!((S.n||'').trim()&&(S.a||'').trim());
+const CR='<p class="mu cr">Herramienta creada por Yankles Gutiérrez O. - Economista - Instructor SENA de Emprendimiento.</p>';
+const gv=p=>p.split('.').reduce((o,k)=>o==null?o:o[k],S);
+function set(p,v){const a=p.split('.');let o=S;for(let i=0;i<a.length-1;i++){o=o[a[i]]||(o[a[i]]={})}o[a[a.length-1]]=v}
+const mu=f=>f=='S'?(S.sem||4.345):FR[f||'M'][1];
+const sm=(gr,D)=>D.reduce((a,[k])=>{const x=S[gr][k]||{};return a+(x.v||0)*mu(x.f)},0);
+const pcalc=p=>{const lote=(p.i||[]).reduce((a,x)=>a+(x[1]||0)*(x[2]||0),0)+(p.m||0);return{lote,cu:lote/(p.l||1)+(p.d||0)}};
+function K(){const s=S,vs=s.vd.reduce((a,b)=>a+(b||0),0),vm=vs*s.sem,PP=s.pr.map(pcalc),
+ct=s.pr.reduce((a,p,i)=>a+(p.u||0)*PP[i].cu,0),vt=s.pr.reduce((a,p)=>a+(p.u||0)*(p.p||0),0),
+cv=vt>0?vm*ct/vt:0,ub=vm-cv,mb=vm?ub/vm:0,gn=sm('gn',GN),gf=sm('gf',GF),oi=sm('oi',OI),uo=ub-gn,disp=uo+oi-gf,
+{monto,plazo,tasa}=s.cr,r=tasa/100,cuota=!monto||!plazo?0:r?monto*r/(1-Math.pow(1+r,-plazo)):monto/plazo,
+ac=s.caja+s.cxc+s.inv+s.ocp,at=ac+s.ter+s.maq+s.mue+s.veh+s.olp,pcor=s.pv+s.cp+s.pb+s.opb,pt=pcor+s.olpb,
+comp=s.co.reduce((a,x)=>a+(x[1]||0)*mu(x[2]),0),ctr=ac-pcor,end=at?(pt+monto)/at*100:0,cob=cuota?disp/cuota:null,pe=mb>0?(gn+cuota)/mb:0;
+return{vs,vm,PP,ct,vt,cv,ub,mb,gn,gf,oi,uo,disp,cuota,ac,at,pcor,pt,pat:at-pt,comp,ctr,end,cob,pe,rc:vm?s.cxc/vm*30:0,ri:cv?s.inv/cv*30:0}}
+const checks=k=>[
+['Utilidad operacional positiva',k.uo>0,1,m(k.uo)],
+['Disponible después de la cuota ≥ 0',k.disp-k.cuota>=0,1,m(k.disp-k.cuota)],
+['Cobertura de la cuota ≥ 1,3 veces',k.cob==null||k.cob>=1.3,0,k.cob==null?'sin crédito':nf(k.cob,2)+' veces'],
+['Capital de trabajo positivo',k.ctr>0,0,m(k.ctr)],
+['Endeudamiento futuro ≤ 60%',k.end<=60,0,pc1(k.end)],
+['Ventas del mes ≥ punto de equilibrio',k.vm>=k.pe,0,m(k.pe)]];
+const vd=k=>{if(!k.vm)return['Completa los datos','mu'];const ko=checks(k).filter(c=>!c[1]);return ko.some(c=>c[2])?['NO VIABLE','ko']:ko.length?['VIABLE CON CONDICIONES','wa']:['VIABLE','ok']};
+const num=(l,p)=>`<label class="f"><span>${l}</span><input type="number" step="any" inputmode="decimal" data-p="${p}" value="${gv(p)||''}" placeholder="0"></label>`,
+txt=(l,p)=>`<label class="f"><span>${l}</span><input data-s="1" data-p="${p}" value="${esc(gv(p))}"></label>`,
+sel=(p,v)=>`<select data-s="1" data-p="${p}">${Object.entries(FR).map(([c,[t]])=>`<option value="${c}"${c==v?' selected':''}>${t}</option>`).join('')}</select>`,
+grow=(g,k,l)=>`<div class="gr"><span>${l}</span><input type="number" inputmode="decimal" data-p="${g}.${k}.v" value="${gv(g+'.'+k+'.v')||''}" placeholder="0">${sel(g+'.'+k+'.f',gv(g+'.'+k+'.f')||'M')}</div>`,
+crow=(x,i)=>`<div class="ins2"><input data-s="1" data-p="co.${i}.0" value="${esc(x[0])}" placeholder="Proveedor"><input type="number" inputmode="decimal" data-p="co.${i}.1" value="${x[1]||''}" placeholder="$ compra">${sel('co.'+i+'.2',x[2])}<button data-a="dc" data-i="${i}" aria-label="Quitar">✕</button></div>`,
+pcard=(p,i)=>`<section class="c"><div class="h"><input class="nm" data-s="1" data-p="pr.${i}.n" value="${esc(p.n)}" placeholder="Nombre del producto"><button data-a="dp" data-i="${i}" aria-label="Quitar producto">✕</button></div>
+<div class="g2">${num('Precio de venta (und.)','pr.'+i+'.p')}${num('Unidades vendidas al mes','pr.'+i+'.u')}</div>
+<div class="g2">${num('Cantidad a costear (lote)','pr.'+i+'.l')}${num('Costo directo por und. (si lo compra hecho)','pr.'+i+'.d')}</div>
+<b class="s">Insumos del lote</b>${p.i.map((x,j)=>`<div class="ins"><input data-s="1" data-p="pr.${i}.i.${j}.0" value="${esc(x[0])}" placeholder="Insumo"><input type="number" inputmode="decimal" data-p="pr.${i}.i.${j}.1" value="${x[1]||''}" placeholder="Cant."><input type="number" inputmode="decimal" data-p="pr.${i}.i.${j}.2" value="${x[2]||''}" placeholder="$ unit."><button data-a="di" data-i="${i}" data-j="${j}" aria-label="Quitar insumo">✕</button></div>`).join('')}
+<button class="b2" data-a="ai" data-i="${i}">+ Insumo</button>${num('Mano de obra directa del lote ($)','pr.'+i+'.m')}<div class="k" id="pk${i}"></div></section>`,
+kv=(l,v,b)=>`<div class="kv${b?' b':''}"><span>${l}</span><b>${v}</b></div>`;
+const V=[
+()=>`<section class="c"><h2>Tu negocio y el crédito</h2><p class="al" id="gm"></p>${txt('Nombre del negocio (obligatorio)','n')}${txt('Nombre del Aprendiz (obligatorio)','a')}${num('Monto del crédito que solicitas ($)','cr.monto')}<div class="g2">${num('Plazo (meses)','cr.plazo')}${num('Tasa mensual (%)','cr.tasa')}</div><div class="k" id="cq"></div></section>
+<section class="c"><h2>Ejemplos de clase</h2><p class="mu">Son negocios reales de hojas de trabajo anteriores. Carga uno y cámbialo para ver cómo responde el negocio. Desde ahora el simulador calcula el mes con 4,345 semanas.</p><div class="g2"><button class="b2" data-a="e1">Mercancías varias</button><button class="b2" data-a="e2">Comidas rápidas y fritos</button><button class="b2" data-a="e3">Confecciones</button><button class="b2" data-a="e4">Venta de cerveza</button></div><button class="b2" data-a="cl">Empezar en blanco</button></section>`,
+()=>`<section class="c"><h2>Ventas de una semana típica</h2><div class="g2">${DIAS.map((d,i)=>num(d,'vd.'+i)).join('')}</div>${num('% de las ventas que son a crédito','pc')}${num('Semanas por mes (4,345 = 365 ÷ 7 ÷ 12). Se usa en ventas, compras y gastos semanales','sem')}<div class="k" id="vk"></div></section>`,
+()=>`${S.pr.map(pcard).join('')}<button class="b1" data-a="ap">+ Agregar producto</button><section class="c"><h2>Totales del costeo</h2><div class="k" id="ck"></div></section>`,
+()=>`<section class="c"><h2>Compras a proveedores</h2><p class="mu">Equivalencias a mes: diario × 30, semanal × 4,345, quincenal × 2, mensual × 1.</p>${S.co.map(crow).join('')}<button class="b2" data-a="ac">+ Proveedor</button></section>
+<section class="c"><h2>Gastos del negocio</h2>${GN.map(([k,l])=>grow('gn',k,l)).join('')}</section>
+<section class="c"><h2>Gastos familiares</h2>${GF.map(([k,l])=>grow('gf',k,l)).join('')}</section>
+<section class="c"><h2>Otros ingresos fuera del negocio</h2>${OI.map(([k,l])=>grow('oi',k,l)).join('')}<p class="mu">Escribe el valor y elige cada cuánto ocurre; el simulador lo pasa a valor mensual.</p></section>`,
+()=>`<section class="c"><h2>Activos corrientes</h2>${num('Caja y bancos','caja')}${num('Cuentas por cobrar','cxc')}${num('Inventarios (a costo)','inv')}${num('Otros activos corrientes','ocp')}</section>
+<section class="c"><h2>Activos fijos</h2>${num('Terrenos y edificios','ter')}${num('Maquinaria y equipo','maq')}${num('Muebles y enseres','mue')}${num('Vehículos','veh')}${num('Otros activos de largo plazo','olp')}</section>
+<section class="c"><h2>Pasivos</h2>${num('Proveedores','pv')}${num('Cuentas por pagar','cp')}${num('Préstamos bancarios','pb')}${num('Otros préstamos (incluye prestadiario)','opb')}${num('Obligaciones bancarias a largo plazo','olpb')}<div class="k" id="bk"></div></section>`,0];
+V[5]=()=>{const k=K();if(!k.vm)return`<section class="c"><h2>Resultado</h2><p class="mu">Primero registra las ventas semanales (paso 2) y tus productos (paso 3).</p></section>`;
+const ch=checks(k),v=vd(k);
+return`<section class="c vr ${v[1]}"><h2 class="${v[1]}">${v[0]}</h2><p>${v[1]=='ok'?'El negocio cubre sus gastos y la cuota con holgura.':v[1]=='wa'?'El negocio genera disponible, pero hay indicadores por mejorar.':'Con estos datos el negocio no cubre sus gastos o la cuota. Ajusta precios, costos, gastos o el monto del crédito.'}</p></section>
+<section class="c"><h2>Criterios de viabilidad</h2>${ch.map(c=>`<div class="kv"><span>${c[1]?'✔':'✖'} ${c[0]}</span><b class="${c[1]?'ok':'ko'}">${c[3]}</b></div>`).join('')}<p class="mu">Los umbrales (1,3 veces y 60%) son referencias didácticas de este simulador; ajústalos a los criterios de la entidad financiera.</p></section>
+<section class="c"><h2>Coherencia de la hoja</h2>${cohHtml(k)}<p class="mu">Margen de referencia: diferencia de hasta $ 100.000 (ideal hasta $ 30.000).</p></section><section class="c"><h2>Estado de resultados mensual</h2>${kv('Ventas del mes',m(k.vm))}${kv('Costo de ventas',m(k.cv))}${kv('Utilidad bruta ('+pc1(k.mb*100)+')',m(k.ub),1)}${kv('Gastos del negocio',m(k.gn))}${kv('(A) Utilidad operacional',m(k.uo),1)}${kv('(B) Otros ingresos',m(k.oi))}${kv('(C) Gastos familiares',m(k.gf))}${kv('(A+B−C) Disponible',m(k.disp),1)}${kv('Cuota del crédito propuesto',m(k.cuota))}${kv('Disponible después de la cuota',m(k.disp-k.cuota),1)}</section>
+<section class="c"><h2>Razones financieras</h2>${kv('Capital de trabajo (Act. corriente − Pas. corriente)',m(k.ctr))}${kv('Rotación de cuentas por cobrar (CxC ÷ ingresos × 30)',nf(k.rc)+' días')}${kv('Rotación de inventarios (Inventario ÷ costo de ventas × 30)',nf(k.ri)+' días')}${kv('Endeudamiento futuro ((Pasivo total + préstamo) ÷ Activo total × 100)',pc1(k.end))}${kv('Cobertura de la cuota (Disponible ÷ cuota)',k.cob==null?'—':nf(k.cob,2)+' veces')}${kv('Margen bruto',pc1(k.mb*100))}${kv('Margen operacional',pc1(k.uo/k.vm*100))}${kv('Punto de equilibrio mensual ((Gastos + cuota) ÷ margen bruto)',m(k.pe))}</section>
+<section class="c"><h2>Balance y compras</h2>${kv('Total activos',m(k.at))}${kv('Total pasivos',m(k.pt))}${kv('Patrimonio (Activos − Pasivos)',m(k.pat))}${kv('Compras mensuales a proveedores',m(k.comp))}${kv('Costo de ventas del mes',m(k.cv))}<p class="mu">Las compras deberían parecerse al costo de ventas; si difieren mucho, revisa el inventario y los precios.</p></section><button class="b1" data-a="pdf">Descargar informe en PDF</button><p class="mu" id="pm"></p>`};
+function U(){const k=K(),s=S;
+{const r=s.cr.tasa/100,n=s.cr.plazo,pg=k.disp-k.cuota>=0&&k.cob!=null&&k.cob>=1.3,mx=k.disp>0&&n?(k.disp/1.3)*(r?(1-Math.pow(1+r,-n))/r:n):0;
+q('cq',`Cuota mensual estimada <b>${m(k.cuota)}</b>`+(k.vm?`<br>Disponible antes de la cuota <b>${m(k.disp)}</b><br>Disponible después de la cuota <b>${m(k.disp-k.cuota)}</b><br>`+(k.cuota?`<b class="${pg?'ok':'ko'}">${pg?'✔ Con lo que genera tu negocio, puedes pagar este crédito.':'✖ Tu negocio no alcanza para pagar esta cuota con holgura.'}</b><br>`:'')+`Monto máximo que podrías pagar con este plazo y esta tasa: <b>${m(mx)}</b><br><span class="mu">Referencia didáctica: el disponible debe cubrir la cuota 1,3 veces.</span>`:'<br>Completa las ventas y el costeo (pasos 2 y 3) para saber si puedes pagar este crédito.'))}
+q('vk',`Ventas de la semana <b>${m(k.vs)}</b><br>Ventas del mes <b>${m(k.vm)}</b><br>A crédito ${m(k.vm*s.pc/100)} · de contado ${m(k.vm*(1-s.pc/100))}`);
+s.pr.forEach((p,i)=>{const c=k.PP[i],u=(p.p||0)-c.cu;q('pk'+i,`Costo del lote ${m(c.lote)}<br>Costo unitario <b>${m(c.cu)}</b> · Utilidad por und. <b>${m(u)}</b><br>Margen de contribución <b>${pc1(p.p?u/p.p*100:0)}</b> · Utilidad del mes ${m(u*(p.u||0))}`)});
+
+q('ck',s.pr.length?`Costo de los productos al mes <b>${m(k.ct)}</b><br>Ventas según costeo <b>${m(k.vt)}</b><br>Utilidad bruta del costeo <b>${m(k.vt-k.ct)}</b> (${pc1(k.vt?(k.vt-k.ct)/k.vt*100:0)})`+cohHtml(k):'');
+q('bk',`Total activos <b>${m(k.at)}</b><br>Total pasivos <b>${m(k.pt)}</b><br>Patrimonio <b>${m(k.pat)}</b>`);
+const v=vd(k);q('bar',`<span class="pill ${v[1]}">${v[0]}</span><span>Disponible tras cuota <b>${m(k.disp-k.cuota)}</b></span>`);
+if(tab==5)$('v').innerHTML=V[5]()+CR;q('gm',ok()?'':'Escribe el nombre del negocio y el tuyo para activar los demás pasos.');document.querySelectorAll('nav button').forEach((b,i)=>{b.disabled=i>0&&!ok()})}
+const coh=d=>{const a=Math.abs(d);return a<=3e4?['ok','coincide']:a<=1e5?['ok','dentro del margen aceptable']:['ko','fuera del margen de $ 100.000']};
+const cohRows=k=>[['Ventas del costeo vs. ventas proyectadas en la matriz',k.vt-k.vm],['Costo total del costeo vs. compras a proveedores',k.ct-k.comp]].map(([l,d])=>({l,d,c:coh(d)}));
+const cohHtml=k=>k.vm?'<p>'+cohRows(k).map(r=>`<span class="${r.c[0]}">${r.c[0]=='ok'?'✔':'✖'} ${r.l}: diferencia ${m(Math.abs(r.d))}, ${r.c[1]}</span>`).join('<br>')+'</p>':'';
+const A=s=>String(s).replace(/≥/g,'>=').replace(/≤/g,'<=').replace(/[−–—]/g,'-').replace(/×/g,'x').replace(/÷/g,'/').replace(/[✔✖]/g,'');
+function buildPdf(){const k=K(),{jsPDF}=window.jspdf,d=new jsPDF({unit:'pt',format:'letter'}),W=612,M=40;let y=56;
+const nw=h=>{if(y+h>735){d.addPage();y=56}};
+const T=(t,z=10,b=0)=>{d.setFont('helvetica',b?'bold':'normal');d.setFontSize(z);const ls=d.splitTextToSize(A(t),W-2*M);nw(ls.length*(z+3)+4);d.text(ls,M,y);y+=ls.length*(z+3)+4};
+const H=t=>{nw(44);y+=8;d.setFillColor(14,107,140);d.rect(M,y-12,W-2*M,18,'F');d.setTextColor(255,255,255);d.setFont('helvetica','bold');d.setFontSize(11);d.text(A(t),M+6,y+1);d.setTextColor(0,0,0);y+=20};
+const Rw=(l,v,b)=>{d.setFont('helvetica',b?'bold':'normal');d.setFontSize(10);const ls=d.splitTextToSize(A(l),W-2*M-150);nw(12*ls.length+6);d.text(ls,M,y);d.text(A(v),W-M,y,{align:'right'});y+=12*ls.length+3;d.setDrawColor(215,222,229);d.line(M,y-9,W-M,y-9)};
+const v=vd(k),cl=v[1]=='ok'?[22,121,74]:v[1]=='wa'?[168,101,0]:[179,38,30];
+T('Mi Negocio en Números - Informe de viabilidad',16,1);T('Negocio: '+S.n,12,1);T('Aprendiz: '+S.a,12);T('Fecha: '+new Date().toLocaleDateString('es-CO'),10);
+d.setTextColor(cl[0],cl[1],cl[2]);T('Resultado: '+v[0],14,1);d.setTextColor(0,0,0);
+H('1. Propuesta de crédito');Rw('Monto solicitado',m(S.cr.monto));Rw('Plazo (meses)',S.cr.plazo);Rw('Tasa mensual',nf(S.cr.tasa,2)+'%');Rw('Cuota mensual estimada',m(k.cuota),1);
+H('2. Matriz de ventas semanales');DIAS.forEach((n,i)=>Rw(n,m(S.vd[i])));Rw('Ventas de la semana',m(k.vs),1);Rw('Ventas del mes (semana x '+nf(S.sem,3)+')',m(k.vm),1);Rw('Ventas a crédito ('+(S.pc||0)+'%)',m(k.vm*S.pc/100));
+H('3. Costeo mensual de principales productos');S.pr.forEach((p,i)=>{const c=k.PP[i],u=(p.p||0)-c.cu;Rw((p.n||'Producto')+': '+(p.u||0)+' und. x costo '+m(c.cu)+' / precio '+m(p.p),'Utilidad '+m(u*(p.u||0))+' | MC '+pc1(p.p?u/p.p*100:0))});Rw('Costo total de los productos',m(k.ct),1);Rw('Venta total según costeo',m(k.vt),1);
+H('4. Coherencia de la hoja');cohRows(k).forEach(r=>Rw(r.l,m(Math.abs(r.d))+' ('+r.c[1]+')'));Rw('Compras mensuales a proveedores',m(k.comp));
+H('5. Estado de resultados mensual');Rw('Ventas del mes',m(k.vm));Rw('Costo de ventas',m(k.cv));Rw('Utilidad bruta ('+pc1(k.mb*100)+')',m(k.ub),1);Rw('Gastos del negocio',m(k.gn));Rw('(A) Utilidad operacional',m(k.uo),1);Rw('(B) Otros ingresos',m(k.oi));Rw('(C) Gastos familiares',m(k.gf));Rw('(A+B-C) Disponible',m(k.disp),1);Rw('Cuota del crédito propuesto',m(k.cuota));Rw('Disponible después de la cuota',m(k.disp-k.cuota),1);
+H('6. Razones financieras');Rw('Capital de trabajo (Act. corriente - Pas. corriente)',m(k.ctr));Rw('Rotación de cuentas por cobrar (CxC / ingresos x 30)',nf(k.rc)+' días');Rw('Rotación de inventarios (Inventario / costo de ventas x 30)',nf(k.ri)+' días');Rw('Endeudamiento futuro ((Pasivo total + préstamo) / Activo total x 100)',pc1(k.end));Rw('Cobertura de la cuota (Disponible / cuota)',k.cob==null?'-':nf(k.cob,2)+' veces');Rw('Margen bruto',pc1(k.mb*100));Rw('Margen operacional',pc1(k.vm?k.uo/k.vm*100:0));Rw('Punto de equilibrio mensual',m(k.pe));
+H('7. Criterios de viabilidad');checks(k).forEach(c=>Rw(c[0],(c[1]?'Cumple':'No cumple')+' - '+c[3]));T('Umbrales didácticos (1,3 veces y 60%); ajústelos al criterio de la entidad financiera.',8);
+H('8. Balance');Rw('Total activos',m(k.at));Rw('Total pasivos',m(k.pt));Rw('Patrimonio (Activos - Pasivos)',m(k.pat),1);
+const n=d.getNumberOfPages();for(let i=1;i<=n;i++){d.setPage(i);d.setFont('helvetica','normal');d.setFontSize(8);d.setTextColor(88,107,125);d.text('Herramienta creada por Yankles Gutiérrez O. - Economista - Instructor SENA de Emprendimiento.',M,770);d.text('Página '+i+' de '+n,W-M,782,{align:'right'})}
+return d}
+async function savePdf(){const e=$('pm');if(!ok()||!K().vm)return;try{if(!window.jspdf){e.textContent='No se cargó el generador de PDF. Revisa tu conexión e intenta de nuevo.';return}
+let dl=null;try{dl=window.claude&&await claude.use('downloads')}catch(x){}
+const fn='Informe_'+S.n.trim().replace(/[^A-Za-z0-9]+/g,'_')+'.pdf';if(dl)await dl.save({filename:fn,data:buildPdf().output('blob')});else buildPdf().save(fn);e.textContent='Informe guardado.'}catch(x){e.textContent=x&&x.code=='declined'?'Descarga cancelada.':'No se pudo generar el PDF. Intenta de nuevo.'}}
+function R(){$('nv').innerHTML=NV.map((t,i)=>`<button data-a="t" data-i="${i}" class="${i==tab?'on':''}"${i>0&&!ok()?' disabled':''}>${i+1}. ${t}</button>`).join('');$('v').innerHTML=V[tab]()+CR;U()}
+document.addEventListener('input',e=>{const t=e.target,p=t.dataset.p;if(!p)return;set(p,t.dataset.s?t.value:+t.value||0);sv();U()});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,i=+b.dataset.i,j=+b.dataset.j;
+if(['e1','e2','e3','e4'].includes(a)&&(S.pr.length||S.vd.some(x=>x))&&!confirm('Cargar el ejemplo reemplaza lo que llevas. ¿Continuar?'))return;
+if(a=='pdf'){savePdf();return}
+else if(a=='t'){tab=(i>0&&!ok())?0:i;scrollTo(0,0)}
+else if(a=='ap')S.pr.push({n:'',p:0,u:0,l:1,d:0,m:0,i:[]});
+else if(a=='dp')S.pr.splice(i,1);
+else if(a=='ai')S.pr[i].i.push(['',0,0]);
+else if(a=='di')S.pr[i].i.splice(j,1);
+else if(a=='ac')S.co.push(['',0,'S']);
+else if(a=='dc')S.co.splice(i,1);
+else if(a=='e1')S=Object.assign(E1(),{a:S.a});
+else if(a=='e2')S=Object.assign(E2(),{a:S.a});
+else if(a=='e3')S=Object.assign(E3(),{a:S.a});
+else if(a=='e4')S=Object.assign(E4(),{a:S.a});
+else if(a=='cl'){if(!confirm('¿Borrar todos los datos y empezar en blanco?'))return;S=blank()}
+sv();R()});
+R();
+</script></body></html>
